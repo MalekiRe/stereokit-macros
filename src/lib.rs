@@ -10,6 +10,7 @@ use quote::{quote, ToTokens};
 use stereokit_rs::enums::{DepthMode, DisplayBlend, DisplayMode, LogFilter};
 use syn::__private::TokenStream2;
 
+
 #[proc_macro]
 pub fn create_sk_settings(_item: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let my_str = _item.to_string();
@@ -108,7 +109,7 @@ pub fn create_sk_settings(_item: proc_macro::TokenStream) -> proc_macro::TokenSt
         };
     }
     first = quote! {
-		sk_settings_t {
+		SKSettings {
 			#first
 			android_java_vm: core::ptr::null_mut(),
 			android_activity: core::ptr::null_mut(),
